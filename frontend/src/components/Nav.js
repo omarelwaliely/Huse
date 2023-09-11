@@ -21,6 +21,9 @@ function Nav(props) {
                 <li className="nav-item active">
                     <Link to="/logout" className="nav-link">Log Out</Link>
                 </li>
+                <li className="nav-item active">
+                    <Link to="/chores" className="nav-link">Chores</Link>
+                </li>
             </ul>
 
         );

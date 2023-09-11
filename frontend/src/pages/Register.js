@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { Navigate } from 'react-router-dom'
 
 function Register() {
-    const [email, setEmail] = useState('');
+    const [username, setUsername] = useState('');
     const [name, setName] = useState('');
     const [password, setPassword] = useState('');
     const [redirect, setRedirect] = useState(false);
@@ -14,7 +14,7 @@ function Register() {
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({
                     name,
-                    email,
+                    username,
                     password,
                 })
             })
@@ -33,8 +33,8 @@ function Register() {
             </div>
 
             <div className="form-floating">
-                <input type="email" className="form-control" id="floatingEmail" placeholder="name@example.com" onChange={e => setEmail(e.target.value)} required />
-                <label htmlFor="floatingEmail">Email Address</label>
+                <input className="form-control" id="floatingUser" placeholder="name@example.com" onChange={e => setUsername(e.target.value)} required />
+                <label htmlFor="floatingUser">Username</label>
 
             </div>
             <div className="form-floating">

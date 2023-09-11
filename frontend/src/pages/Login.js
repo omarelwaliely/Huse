@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { Navigate, redirect } from 'react-router-dom'
 
 function Login(props) {
-    const [email, setEmail] = useState('');
+    const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
     const [redirect, setRedirect] = useState(false);
     const submit =
@@ -14,7 +14,7 @@ function Login(props) {
                     headers: { 'Content-Type': 'application/json' },
                     credentials: 'include',
                     body: JSON.stringify({
-                        email,
+                        username,
                         password,
                     })
                 })
@@ -36,8 +36,8 @@ function Login(props) {
             <h1 className="h3 mb-3 fw-normal">Sign In</h1>
 
             <div className="form-floating">
-                <input type="email" className="form-control" id="floatingInput" placeholder="name@example.com" onChange={e => setEmail(e.target.value)} required />
-                <label htmlFor="floatingInput">Email Address</label>
+                <input className="form-control" id="floatingInput" placeholder="name@example.com" onChange={e => setUsername(e.target.value)} required />
+                <label htmlFor="floatingInput">Username</label>
             </div>
             <div className="form-floating">
                 <input type="password" className="form-control" id="floatingPassword" placeholder="Password" onChange={e => setPassword(e.target.value)} required />

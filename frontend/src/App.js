@@ -8,6 +8,7 @@ import Register from './pages/Register'
 import Home from './pages/Home'
 import React, { useState, useEffect } from 'react'
 import Logout from './pages/Logout.js';
+import Chores from './pages/Chores.js';
 
 function App() {
   const [name, setName] = useState('')
@@ -33,6 +34,7 @@ function App() {
             <Route path="/login" element={<Login setName={setName} />} />
             <Route path="/register" element={<Register />} />
             <Route path="/logout" element={<Logout setName={setName} />} />
+            <Route path="/chores" element={<Chores name={name} />} />
           </Routes>
         </main>
       </BrowserRouter>
